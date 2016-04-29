@@ -488,9 +488,9 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer</strong></p>
-<p>The first establishment could be a grocery store because it appears spending is even across all product categories.  Grocery stores carry many different types of products which could explain the expenses.</p>
-<p>The second establishment could be a fast-food restaurant because it appears spending is very high within the Frozen product category, but low in Milk and Detergents_Paper.  Fast-food restaurants use a lot of frozen products when preparing meals.</p>
-<p>The third establishment could be a steak-house or more upscale restaurant because it appears spending is extremely high in the Fresh product category, but very low in Frozen.</p>
+<p>The first establishment could be a grocery store because it appears spending is even across all product categories.  It has the 50th percentile for Fresh, 60th percentile for Milk, 70th percentile for Grocery, 50th percentile for Frozen, 70th percentile for Detergents_Paper, and 85th percentile for Delicatessen. Grocery stores carry many different types of products which could explain the expenses.</p>
+<p>The second establishment could be a fast-food restaurant because it appears spending is very high within the Frozen product category (80th percentile), but low in Milk (10th percentile) and Detergents_Paper (10th percentile).  Fast-food restaurants use a lot of frozen products when preparing meals.</p>
+<p>The third establishment could be a deli restaurant because it appears spending is extremely high in Delicatessen (90th percentile), moderate in the Fresh product category (50th percentile), and very low in Frozen (5th percentile).  Deli restaurants use Delicatessen products, and Fresh products, but rarely have Frozen products in stock.</p>
 
 </div>
 </div>
@@ -7548,6 +7548,7 @@ Sample point 2 predicted to be in Cluster 0
 <p>A change in delivery service frequency would not affect all customers equally.</p>
 <p>If the wholesale distributor wanted to change its delivery service from 5 days a week to 3 days a week, we could determine which customers had high percentiles of expenses for product categories: Fresh and Dairy.  These categories would benefit most from frequent deliveries due to factors such as: expiration dates and produce freshness.</p>
 <p>Increasing the frequency of the delivery service could also benefit customers that go through a lot of inventory.  These customers would have a feature (or set of features) with higher than 75th percentile of expenses.</p>
+<p>The A/B test could be: take 10% of customers that have high percentiles of expenses in Fresh and Dairy and modify the delivery service to 3 days per week.  Then take another 10% of customers from the same cluster but maintain the delivery service at 5 days per week.  After a few weeks, conduct a survey from each group and compare the results to determine the optimal delivery service frequency.</p>
 
 </div>
 </div>
@@ -7568,7 +7569,8 @@ Sample point 2 predicted to be in Cluster 0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>One way to assist a supervised learning analysis is to train on a subset of the data with the cluster label removed from the dataset.  After training, we can score the predictions to see how accurate the model was.</p>
+<p>One way to assist a supervised learning analysis is to use the cluster that a customer belongs to as a label for training the data.  We would then test on a subset of the data with the cluster label removed from the dataset.  After training, we can score the predictions to see how accurate the model was.</p>
+<p>If we want to classify a new customer, we can use the cluster labels to obtain more information about the customer.</p>
 <p>By grouping the data points into clusters using Principal Component Analysis, we were able to reduce the number of dimensions from six down to two.  Having less dimensions helps simplify the supervised learning analysis.</p>
 
 </div>
